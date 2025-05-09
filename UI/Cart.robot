@@ -5,7 +5,13 @@ Resource    ../Resources/Resource.robot
 
 *** Variables ***
 # @{PAGENAME_JENIS ELEMENT_NAMA ELEMENT}
+# HOME
 ${HOME_TAB_PRODUCTS}    //a[@href='/products']
+${HOME_TAB_HOME}    //a[normalize-space()='Home']
+${HOME_LABEL_RECOMMENDEDITEMS}    //h2[normalize-space()='recommended items']
+${HOME_TAB_SIGNUP}    //a[normalize-space()='Signup / Login']
+${HOME_BUTTON_ADDTOCART}    xpath=//a[contains(@class, 'add-to-cart') and @data-product-id="1"]
+# PRODUCTS & PRODUCTDETAILS
 ${PRODUCTS_BUTTON_VIEWPRODUCTS}    //div[@class='col-sm-9 padding-right']//div[2]//div[1]//div[2]//ul[1]//li[1]//a[1]
 ${PRODUCTDETAILS_INPUTTEXT_NAME}    //input[@id='name']
 ${PRODUCTDETAILS_INPUTTEXT_EMAIL}    //input[@id='email']
@@ -13,12 +19,7 @@ ${PRODUCTDETAILS_INPUTTEXT_REVIEW}    //textarea[@id='review']
 ${PRODUCTDETAILS_BUTTON_SUBMIT}    //button[@id='button-review']
 ${PRODUCTS_LABEL_ALLPRODUCTS}    //h2[@class='title text-center']
 ${PRODUCTDETAILS_LABEL_WRITEREVIEW}    //a[normalize-space()='Write Your Review']
-${HOME_TAB_HOME}    //a[normalize-space()='Home']
-${HOME_LABEL_RECOMMENDEDITEMS}    //h2[normalize-space()='recommended items']
-${RECOMMENDEDITEMS_BUTTON_ADDTOCART}    //div[@class='item active']//div[1]//div[1]//div[1]//div[1]//a[1]
-${CART_LINK_VIEWCART}    //u[normalize-space()='View Cart']
-${CART_LABEL_PRODUCTS}    //a[normalize-space()='Blue Top']
-${HOME_TAB_SIGNUP}    //a[normalize-space()='Signup / Login']
+# SIGNUP
 ${SIGNUP_INPUTTEXT_NAME}    //input[@placeholder='Name']
 ${SIGNUP_INPUTTEXT_EMAIL}    //input[@data-qa='signup-email']
 ${SIGNUP_BUTTON_SIGNUP}    //button[normalize-space()='Signup']
@@ -38,13 +39,21 @@ ${SIGNUP_INPUTTEXT_PHONE}    //input[@id='mobile_number']
 ${SIGNUP_BUTTON_CREATE}    //button[normalize-space()='Create Account']
 ${SIGNUP_LABEL_CREATED}    //b[normalize-space()='Account Created!']
 ${SIGNUP_BUTTON_CONTINUE}    //a[@class='btn btn-primary']
+# CART
+${CART_LINK_VIEWCART}    //u[normalize-space()='View Cart']
+${CART_LABEL_PRODUCTS}    //a[normalize-space()='Blue Top']
+${CART_BUTTON_CHECKOUT}    //a[@class='btn btn-default check_out']
+# LOGIN
 ${LOGIN_LABEL_LOGOUT}    //a[normalize-space()='Logout']
 ${LOGIN_BUTTON_DELETEACCOUNT}    //a[normalize-space()='Delete Account']
-${HOME_BUTTON_ADDTOCART}    xpath=//a[contains(@class, 'add-to-cart') and @data-product-id="1"]    
-${CART_BUTTON_CHECKOUT}    //a[@class='btn btn-default check_out']
+${LOGIN_LABEL_DELETEACCOUNT}    //b[normalize-space()='Account Deleted!']
+#ANY
+${RECOMMENDEDITEMS_BUTTON_ADDTOCART}    //div[@class='item active']//div[1]//div[1]//div[1]//div[1]//a[1]
+${ADDRESS_DETAILS}    css:#address_delivery
+${BILLING_DETAILS}    css:#address_delivery
 #@{CHECKOUT_LABEL_DELIVERYADDRESS}    //h3[normalize-space()='Your delivery address']
 #@{CHECKOUT_LABEL_BILLINGADDRESS}    //h3[normalize-space()='Your billing address']
-${LOGIN_LABEL_DELETEACCOUNT}    //b[normalize-space()='Account Deleted!']
+
 
 
 *** Keywords ***
@@ -128,8 +137,10 @@ Verify address details
     Click Element    ${CART_LINK_VIEWCART}
     Wait Until Element Is Visible    ${CART_BUTTON_CHECKOUT}
     Click Element    ${CART_BUTTON_CHECKOUT}
-    Wait Until Page Contains    Your delivery address    5s
-    Wait Until Page Contains    Your billing address    5s
+    ${DELIVERYADDRESS}    Get Text    ${ADDRESS_DETAILS}
+    Should Contain    ${DELIVERYADDRESS}    Singapore SG 1234
+    ${BILLINGADDRESS}    Get Text    ${BILLING_DETAILS}
+    Should Contain    ${BILLINGADDRESS}    Singapore
     Click Element    ${LOGIN_BUTTON_DELETEACCOUNT}
     ${verifyAccountDeleted}    Get Text    ${LOGIN_LABEL_DELETEACCOUNT}
     Should Be Equal    ${verifyAccountDeleted}    ACCOUNT DELETED!
