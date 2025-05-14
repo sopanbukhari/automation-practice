@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../UI/Cart.robot
+Resource    ../UI/CartAndProduct.robot
 Test Template    Menu Cart and Product
 Test Teardown    Close All Browsers
 
