@@ -2,58 +2,56 @@
 Resource    ../Resources/Resource.robot
 
 
-
 *** Variables ***
 # @{PAGENAME_JENIS ELEMENT_NAMA ELEMENT}
 # HOME
-${HOME_TAB_PRODUCTS}    //a[@href='/products']
-${HOME_TAB_HOME}    //a[normalize-space()='Home']
-${HOME_LABEL_RECOMMENDEDITEMS}    //h2[normalize-space()='recommended items']
-${HOME_TAB_SIGNUP}    //a[normalize-space()='Signup / Login']
-${HOME_BUTTON_ADDTOCART}    xpath=//a[contains(@class, 'add-to-cart') and @data-product-id="1"]
+${HOME_TAB_PRODUCTS}                    //a[@href='/products']
+${HOME_TAB_HOME}                        //a[normalize-space()='Home']
+${HOME_LABEL_RECOMMENDEDITEMS}          //h2[normalize-space()='recommended items']
+${HOME_TAB_SIGNUP}                      //a[normalize-space()='Signup / Login']
+${HOME_BUTTON_ADDTOCART}                xpath=//a[contains(@class, 'add-to-cart') and @data-product-id="1"]
 # PRODUCTS & PRODUCTDETAILS
-${PRODUCTS_BUTTON_VIEWPRODUCTS}    //div[@class='col-sm-9 padding-right']//div[2]//div[1]//div[2]//ul[1]//li[1]//a[1]
-${PRODUCTDETAILS_INPUTTEXT_NAME}    //input[@id='name']
-${PRODUCTDETAILS_INPUTTEXT_EMAIL}    //input[@id='email']
-${PRODUCTDETAILS_INPUTTEXT_REVIEW}    //textarea[@id='review']
-${PRODUCTDETAILS_BUTTON_SUBMIT}    //button[@id='button-review']
-${PRODUCTS_LABEL_ALLPRODUCTS}    //h2[@class='title text-center']
-${PRODUCTDETAILS_LABEL_WRITEREVIEW}    //a[normalize-space()='Write Your Review']
+${PRODUCTS_BUTTON_VIEWPRODUCTS}         //div[@class='col-sm-9 padding-right']//div[2]//div[1]//div[2]//ul[1]//li[1]//a[1]
+${PRODUCTDETAILS_INPUTTEXT_NAME}        //input[@id='name']
+${PRODUCTDETAILS_INPUTTEXT_EMAIL}       //input[@id='email']
+${PRODUCTDETAILS_INPUTTEXT_REVIEW}      //textarea[@id='review']
+${PRODUCTDETAILS_BUTTON_SUBMIT}         //button[@id='button-review']
+${PRODUCTS_LABEL_ALLPRODUCTS}           //h2[@class='title text-center']
+${PRODUCTDETAILS_LABEL_WRITEREVIEW}     //a[normalize-space()='Write Your Review']
 # SIGNUP
-${SIGNUP_INPUTTEXT_NAME}    //input[@placeholder='Name']
-${SIGNUP_INPUTTEXT_EMAIL}    //input[@data-qa='signup-email']
-${SIGNUP_BUTTON_SIGNUP}    //button[normalize-space()='Signup']
-${SIGNUP_RADIOBUTTON_GENDERMALE}    id_gender1
-${SIGNUP_INPUTTEXT_PASSWORD}    //input[@id='password']
-${SIGNUP_DROPDOWN_DATE}    //select[@id='days']
-${SIGNUP_DROPDOWN_MONTH}    //select[@id='months']
-${SIGNUP_DROPDOWN_YEAR}    //select[@id='years']
-${SIGNUP_INPUTTEXT_FIRSTNAME}    //input[@id='first_name']
-${SIGNUP_INPUTTEXT_LASTNAME}    //input[@id='last_name']
-${SIGNUP_INPUTTEXT_ADDRESS}    //input[@id='address1']
-${SIGNUP_DROPDOWN_COUNTRY}    //select[@id='country']
-${SIGNUP_INPUTTEXT_STATE}    //input[@id='state']
-${SIGNUP_INPUTTEXT_CITY}    //input[@id='city']
-${SIGNUP_INPUTTEXT_ZIPCODE}    //input[@id='zipcode']
-${SIGNUP_INPUTTEXT_PHONE}    //input[@id='mobile_number']
-${SIGNUP_BUTTON_CREATE}    //button[normalize-space()='Create Account']
-${SIGNUP_LABEL_CREATED}    //b[normalize-space()='Account Created!']
-${SIGNUP_BUTTON_CONTINUE}    //a[@class='btn btn-primary']
+${SIGNUP_INPUTTEXT_NAME}                //input[@placeholder='Name']
+${SIGNUP_INPUTTEXT_EMAIL}               //input[@data-qa='signup-email']
+${SIGNUP_BUTTON_SIGNUP}                 //button[normalize-space()='Signup']
+${SIGNUP_RADIOBUTTON_GENDERMALE}        id_gender1
+${SIGNUP_INPUTTEXT_PASSWORD}            //input[@id='password']
+${SIGNUP_DROPDOWN_DATE}                 //select[@id='days']
+${SIGNUP_DROPDOWN_MONTH}                //select[@id='months']
+${SIGNUP_DROPDOWN_YEAR}                 //select[@id='years']
+${SIGNUP_INPUTTEXT_FIRSTNAME}           //input[@id='first_name']
+${SIGNUP_INPUTTEXT_LASTNAME}            //input[@id='last_name']
+${SIGNUP_INPUTTEXT_ADDRESS}             //input[@id='address1']
+${SIGNUP_DROPDOWN_COUNTRY}              //select[@id='country']
+${SIGNUP_INPUTTEXT_STATE}               //input[@id='state']
+${SIGNUP_INPUTTEXT_CITY}                //input[@id='city']
+${SIGNUP_INPUTTEXT_ZIPCODE}             //input[@id='zipcode']
+${SIGNUP_INPUTTEXT_PHONE}               //input[@id='mobile_number']
+${SIGNUP_BUTTON_CREATE}                 //button[normalize-space()='Create Account']
+${SIGNUP_LABEL_CREATED}                 //b[normalize-space()='Account Created!']
+${SIGNUP_BUTTON_CONTINUE}               //a[@class='btn btn-primary']
 # CART
-${CART_LINK_VIEWCART}    //u[normalize-space()='View Cart']
-${CART_LABEL_PRODUCTS}    //a[normalize-space()='Blue Top']
-${CART_BUTTON_CHECKOUT}    //a[@class='btn btn-default check_out']
+${CART_LINK_VIEWCART}                   //u[normalize-space()='View Cart']
+${CART_LABEL_PRODUCTS}                  //a[normalize-space()='Blue Top']
+${CART_BUTTON_CHECKOUT}                 //a[@class='btn btn-default check_out']
 # LOGIN
-${LOGIN_LABEL_LOGOUT}    //a[normalize-space()='Logout']
-${LOGIN_BUTTON_DELETEACCOUNT}    //a[normalize-space()='Delete Account']
-${LOGIN_LABEL_DELETEACCOUNT}    //b[normalize-space()='Account Deleted!']
-#ANY
+${LOGIN_LABEL_LOGOUT}                   //a[normalize-space()='Logout']
+${LOGIN_BUTTON_DELETEACCOUNT}           //a[normalize-space()='Delete Account']
+${LOGIN_LABEL_DELETEACCOUNT}            //b[normalize-space()='Account Deleted!']
+# ANY
 ${RECOMMENDEDITEMS_BUTTON_ADDTOCART}    //div[@class='item active']//div[1]//div[1]//div[1]//div[1]//a[1]
-${ADDRESS_DETAILS}    css:#address_delivery
-${BILLING_DETAILS}    css:#address_delivery
-#@{CHECKOUT_LABEL_DELIVERYADDRESS}    //h3[normalize-space()='Your delivery address']
-#@{CHECKOUT_LABEL_BILLINGADDRESS}    //h3[normalize-space()='Your billing address']
-
+${ADDRESS_DETAILS}                      css:#address_delivery
+${BILLING_DETAILS}                      css:#address_delivery
+# @{CHECKOUT_LABEL_DELIVERYADDRESS}    //h3[normalize-space()='Your delivery address']
+# @{CHECKOUT_LABEL_BILLINGADDRESS}    //h3[normalize-space()='Your billing address']
 
 
 *** Keywords ***
@@ -83,11 +81,11 @@ Add new review
     Input Text    ${PRODUCTDETAILS_INPUTTEXT_REVIEW}    good products!
     Scroll Element Into View    ${PRODUCTDETAILS_BUTTON_SUBMIT}
     Click Element    ${PRODUCTDETAILS_BUTTON_SUBMIT}
-    Wait Until Page Contains    Thank you for your review.    30s   
+    Wait Until Page Contains    Thank you for your review.    30s
 
 Add to cart
     ${verifyHome}    Get Text    ${HOME_TAB_HOME}
-    Should Be Equal    ${verifyHome}     Home
+    Should Be Equal    ${verifyHome}    Home
     Scroll Element Into View    ${HOME_LABEL_RECOMMENDEDITEMS}
     Click Element    ${RECOMMENDEDITEMS_BUTTON_ADDTOCART}
     Wait Until Element Is Visible    ${CART_LINK_VIEWCART}    5s
@@ -97,7 +95,7 @@ Add to cart
 
 Verify address details
     ${verifyHome}    Get Text    ${HOME_TAB_HOME}
-    Should Be Equal    ${verifyHome}     Home
+    Should Be Equal    ${verifyHome}    Home
     Click Element    ${HOME_TAB_SIGNUP}
     Input Text    ${SIGNUP_INPUTTEXT_NAME}    test
     Input Text    ${SIGNUP_INPUTTEXT_EMAIL}    rey@gmail.com
@@ -113,7 +111,7 @@ Verify address details
     Scroll Element Into View    ${SIGNUP_INPUTTEXT_LASTNAME}
     Input Text    ${SIGNUP_INPUTTEXT_LASTNAME}    QA
     Scroll Element Into View    ${SIGNUP_INPUTTEXT_ADDRESS}
-    Input Text    ${SIGNUP_INPUTTEXT_ADDRESS}    TEST123    
+    Input Text    ${SIGNUP_INPUTTEXT_ADDRESS}    TEST123
     Scroll Element Into View    ${SIGNUP_DROPDOWN_COUNTRY}
     Select From List By Value    ${SIGNUP_DROPDOWN_COUNTRY}    Singapore
     Scroll Element Into View    ${SIGNUP_INPUTTEXT_STATE}
@@ -144,9 +142,3 @@ Verify address details
     Click Element    ${LOGIN_BUTTON_DELETEACCOUNT}
     ${verifyAccountDeleted}    Get Text    ${LOGIN_LABEL_DELETEACCOUNT}
     Should Be Equal    ${verifyAccountDeleted}    ACCOUNT DELETED!
-
-
-
-
-
-    
