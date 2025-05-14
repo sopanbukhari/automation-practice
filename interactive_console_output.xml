@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.9 on win32)" generated="20250513 14:39:44.007" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\abdul.permana\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Verify that">
+<arg>${SUITE_NAME} - ${TEST_NAME}</arg>
+<msg timestamp="20250513 14:39:45.709" level="FAIL">No keyword with name 'Verify that' found.</msg>
+<status status="FAIL" starttime="20250513 14:39:45.709" endtime="20250513 14:39:45.709"/>
+</kw>
+<status status="PASS" starttime="20250513 14:39:44.043" endtime="20250513 14:39:46.194"/>
+</kw>
+<status status="PASS" starttime="20250513 14:39:44.043" endtime="20250513 14:39:46.196"/>
+</test>
+<status status="PASS" starttime="20250513 14:39:44.009" endtime="20250513 14:39:46.197"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

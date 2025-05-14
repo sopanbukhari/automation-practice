@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.9 on win32)" generated="20250513 15:54:28.676" rpa="false" schemaversion="4">
+<suite id="s1" name="View Category Product" source="d:\#Automation\automation-practice\Tests\View_Category_Product.robot">
+<test id="s1-t1" name="TC03 - Search Products" line="9">
+<kw name="Category Product" library="View_Category_Product">
+<arg>Search Products and Verify Cart After Login</arg>
+<arg>${SUITE_NAME} - ${TEST_NAME}</arg>
+<kw name="Open Web AutomationExercise" library="Resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20250513 15:54:28.989" endtime="20250513 15:54:28.989"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250513 15:54:28.989" level="INFO">Opening browser 'Chrome' to base url 'https://www.automationexercise.com/'.</msg>
+<msg timestamp="20250513 15:54:31.148" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: received fatal alert: HandshakeFailure</msg>
+<status status="PASS" starttime="20250513 15:54:28.989" endtime="20250513 15:54:36.555"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250513 15:54:36.555" endtime="20250513 15:54:37.615"/>
+</kw>
+<status status="PASS" starttime="20250513 15:54:28.989" endtime="20250513 15:54:37.615"/>
+</kw>
+<if>
+<branch type="IF" condition="'View Category Products' == '${deskripsi}'">
+<kw name="View Category Products" library="View_Category_Product">
+<status status="NOT RUN" starttime="20250513 15:54:37.615" endtime="20250513 15:54:37.615"/>
+</kw>
+<status status="NOT RUN" starttime="20250513 15:54:37.615" endtime="20250513 15:54:37.615"/>
+</branch>
+<branch type="ELSE IF" condition="'View &amp; Cart Brand Products' == '${deskripsi}'">
+<kw name="View Cart Brand Products" library="View_Category_Product">
+<status status="NOT RUN" starttime="20250513 15:54:37.615" endtime="20250513 15:54:37.615"/>
+</kw>
+<status status="NOT RUN" starttime="20250513 15:54:37.615" endtime="20250513 15:54:37.615"/>
+</branch>
+<branch type="ELSE IF" condition="'Search Products and Verify Cart After Login' == '${deskripsi}'">
+<kw name="Search Products" library="View_Category_Product">
+<kw name="Open Web AutomationExercise" library="Resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20250513 15:54:37.620" endtime="20250513 15:54:37.620"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250513 15:54:37.620" level="INFO">Opening browser 'Chrome' to base url 'https://www.automationexercise.com/'.</msg>
+<msg timestamp="20250513 15:54:39.527" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: received fatal alert: HandshakeFailure</msg>
+<status status="PASS" starttime="20250513 15:54:37.620" endtime="20250513 15:54:44.755"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250513 15:54:44.755" endtime="20250513 15:54:45.848"/>
+</kw>
+<status status="PASS" starttime="20250513 15:54:37.620" endtime="20250513 15:54:45.850"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_PRODUCTS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250513 15:54:45.903" level="INFO">Clicking element '//*[@id="header"]/div/div/div/div[2]/div/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20250513 15:54:45.850" endtime="20250513 15:54:49.576"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${HOME_PRODUCTS_LABEL}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20250513 15:54:49.576" endtime="20250513 15:54:51.884"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${verifyAllProduct}</var>
+<arg>${HOME_PRODUCTS_LABEL}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250513 15:54:53.946" level="INFO">${verifyAllProduct} = ALL PRODUCTS</msg>
+<status status="PASS" starttime="20250513 15:54:51.884" endtime="20250513 15:54:53.946"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${verifyAllProduct}</arg>
+<arg>ALL PRODUCTS</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20250513 15:54:53.946" endtime="20250513 15:54:53.946"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${HOME_FORM_SEARCH}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20250513 15:54:53.946" endtime="20250513 15:54:56.286"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${verifyAllProduct}</var>
+<arg>${HOME_FORM_SEARCH}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250513 15:54:58.335" level="INFO">${verifyAllProduct} = </msg>
+<status status="PASS" starttime="20250513 15:54:56.286" endtime="20250513 15:54:58.335"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME_FORM_SEARCH}</arg>
+<arg>Premium Polo</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250513 15:54:58.339" level="INFO">Typing text 'Premium Polo' into text field '//input[@id='search_product']'.</msg>
+<status status="PASS" starttime="20250513 15:54:58.335" endtime="20250513 15:55:01.604"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${HOME_PRODUCTS_ADD_CART}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20250513 15:55:01.604" endtime="20250513 15:55:03.916"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${verifyBrands}</var>
+<arg>${HOME_PRODUCTS_ADD_CART}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250513 15:55:05.969" level="INFO">${verifyBrands} = </msg>
+<status status="PASS" starttime="20250513 15:55:03.916" endtime="20250513 15:55:05.969"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector('a[data-product-id="1"]').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20250513 15:55:05.971" level="INFO">Executing JavaScript:
+document.querySelector('a[data-product-id="1"]').click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20250513 15:55:05.969" endtime="20250513 15:55:06.991"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CART_LINK_VIEWCART}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250513 15:55:06.992" endtime="20250513 15:55:09.053"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_VIEW_CART}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250513 15:55:09.053" level="INFO">Clicking element '//u[normalize-space()='View Cart']'.</msg>
+<status status="PASS" starttime="20250513 15:55:09.053" endtime="20250513 15:55:12.182"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_CART}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250513 15:55:12.184" level="INFO">Clicking element '//a[normalize-space()='Cart']'.</msg>
+<status status="PASS" starttime="20250513 15:55:12.182" endtime="20250513 15:55:14.915"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_LOGIN_SIGNUP}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250513 15:55:14.915" level="INFO">Clicking element '//a[normalize-space()='Signup / Login']'.</msg>
+<status status="PASS" starttime="20250513 15:55:14.915" endtime="20250513 15:55:17.682"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGIN_FORM_EMAIL}</arg>
+<arg>testio@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250513 15:55:17.682" level="INFO">Typing text 'testio@gmail.com' into text field '//input[@data-qa='login-email']'.</msg>
+<status status="PASS" starttime="20250513 15:55:17.682" endtime="20250513 15:55:20.987"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGIN_FORM_PASSWORD}</arg>
+<arg>test123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250513 15:55:20.987" level="INFO">Typing text 'test123' into text field '//input[@placeholder='Password']'.</msg>
+<status status="PASS" starttime="20250513 15:55:20.987" endtime="20250513 15:55:24.216"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250513 15:55:24.219" level="INFO">Clicking element '//button[normalize-space()='Login']'.</msg>
+<status status="PASS" starttime="20250513 15:55:24.217" endtime="20250513 15:55:26.388"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_CART}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250513 15:55:26.390" level="INFO">Clicking element '//a[normalize-space()='Cart']'.</msg>
+<status status="PASS" starttime="20250513 15:55:26.388" endtime="20250513 15:55:30.717"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${verifyAllProduct}</var>
+<arg>${CART_LABEL_PRODUCTS}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250513 15:55:32.882" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-25.png"&gt;&lt;img src="selenium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250513 15:55:32.890" level="FAIL">Element with locator '//a[normalize-space()='Blue Top']' not found.</msg>
+<status status="FAIL" starttime="20250513 15:55:30.717" endtime="20250513 15:55:32.905"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${verifyAllProduct}</arg>
+<arg>Blue Top</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20250513 15:55:32.905" endtime="20250513 15:55:32.905"/>
+</kw>
+<status status="FAIL" starttime="20250513 15:54:37.615" endtime="20250513 15:55:32.905"/>
+</kw>
+<status status="FAIL" starttime="20250513 15:54:37.615" endtime="20250513 15:55:32.905"/>
+</branch>
+<status status="FAIL" starttime="20250513 15:54:37.615" endtime="20250513 15:55:32.905"/>
+</if>
+<status status="FAIL" starttime="20250513 15:54:28.989" endtime="20250513 15:55:32.905"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250513 15:55:32.905" endtime="20250513 15:55:39.324"/>
+</kw>
+<status status="FAIL" starttime="20250513 15:54:28.989" endtime="20250513 15:55:39.324">Element with locator '//a[normalize-space()='Blue Top']' not found.</status>
+</test>
+<status status="FAIL" starttime="20250513 15:54:28.684" endtime="20250513 15:55:39.331"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="View Category Product">View Category Product</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20250513 15:54:31.148" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: received fatal alert: HandshakeFailure</msg>
+<msg timestamp="20250513 15:54:39.527" level="WARN">Exception managing chrome: error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json): error trying to connect: received fatal alert: HandshakeFailure</msg>
+</errors>
+</robot>
