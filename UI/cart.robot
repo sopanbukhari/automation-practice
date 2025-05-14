@@ -166,8 +166,8 @@ Place Order: Register before Checkout
 
 Place Order: Login before Checkout
     Click Element    @{HOME_BUTTON_SIGNUP/LOGIN}
-    Input Text    @{HOME_LOGIN_INPUTEMAIL}    ibnutesting0@testmail.com    
-    Input Text    @{HOME_LOGIN_INPUTPASSWORD}    Ibnu.testing0
+    Input Text    @{HOME_LOGIN_INPUTEMAIL}    ibnukemal09@testmail.com    
+    Input Text    @{HOME_LOGIN_INPUTPASSWORD}    Ibnukemal09.
     Click Element    @{HOME_LOGIN_BUTTONLOGIN}
     Get Text    @{HOME_LOGIN_VERIVIEDLOGGEDIN}
     Click Element    @{HOME_BUTTON_CART}
